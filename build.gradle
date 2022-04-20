@@ -1,0 +1,24 @@
+buildscript {
+    ext {
+        compose_version = '1.0.1'
+        vlc_version = '3.4.4'
+    }
+}// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id 'com.android.application' version '7.1.1' apply false
+    id 'com.android.library' version '7.1.1' apply false
+    id 'org.jetbrains.kotlin.android' version '1.5.21' apply false
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+allprojects {
+    repositories {
+       // jcenter() -> > Build was configured to prefer settings repositories over project repositories but repository 'BintrayJCenter' was added by build file 'build.gradle'
+       // google()  -> Build was configured to prefer settings repositories over project repositories but repository 'Google' was added by build file 'build.gradle'
+       // maven { url "https://dl.bintray.com/videolan/Android" } ->
+        //> Build was configured to prefer settings repositories over project repositories but repository 'maven' was added by build file 'build.gradle'
+    }
+}
