@@ -32,8 +32,9 @@ import org.videolan.libvlc.util.VLCVideoLayout
 
 class MainActivity : ComponentActivity(), MediaPlayer.EventListener {
 
-    private val testurl = "rtsp://rtsp.stream/pattern"
+    private val testurl = "tcp/h264://10.0.0.134:55555"
     private val raspberry = "rtsp://10.0.0.134:3366/stream1"
+    //"rtsp://rtsp.stream/pattern"
 
     private var libVlc: LibVLC? = null
     private var mediaPlayer: MediaPlayer? = null
@@ -53,6 +54,7 @@ class MainActivity : ComponentActivity(), MediaPlayer.EventListener {
 
 
     override fun onEvent(event: MediaPlayer.Event) {
+
         if (event.type == MediaPlayer.Event.Buffering) {
             if (event.buffering == 100f) {
                 progressDialog?.hide() //                progressDialog.hide()
